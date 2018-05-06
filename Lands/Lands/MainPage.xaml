@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:Lands"
              x:Class="Lands.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
+	<Label Text="Welcome to Xamarin.Forms! Probando Github" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
 
