@@ -1,12 +1,18 @@
 ﻿namespace Lands.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
-    using System;
     using System.Windows.Input;
+    using Xamarin.Forms;
 
-    public class LoginViewModel
+    public class LoginViewModel : BaseViewModel
     {
-        #region MyProperties
+        #region Attributes
+        private string password;
+        private bool isRunning;
+        private bool isEnabled;
+        #endregion
+
+        #region Properties
         public string Email
         {
             get;
@@ -14,18 +20,32 @@
         }
         public string Password
         {
-            get;
-            set;
+            get { return this.password; }
+            set { SetValue(ref this.password, value); }
         }
         public bool IsRunning
         {
-            get;
-            set;
+            get { return this.isRunning; }
+            set { SetValue(ref this.isRunning, value); }
         }
-        public bool IsRemember
+        public bool IsRemembered
         {
             get;
             set;
+        }
+        public bool IsEnabled
+        {
+            get { return this.isEnabled; }
+            set { SetValue(ref this.isEnabled, value); }
+        }
+
+        #endregion
+
+        #region Constructors
+        public LoginViewModel()
+        {
+            this.IsRemembered = true;
+            this.isEnabled = true;
         }
         #endregion
 
@@ -38,21 +58,44 @@
             }
         }
 
-        private void Login()
+        private async void Login()
         {
+            if (string.IsNullOrEmpty(this.Email))
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "You must enter a Email.",
+                    "Accept");
+                return;
+            }
+            if (string.IsNullOrEmpty(this.Password))
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "You must enter a Password.",
+                    "Accept");
+                return;
+            }
 
-        }
+            this.IsRunning = true;
+            this.IsEnabled = false;
 
-        public ICommand RegisterCommand
-        {
-            get;
-        }
-        #endregion
+            if(this.Email != "jzuluaga55@gmail.com" || this.Password != "1234")
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "Email or Password incorrect",
+                    "Accept");
+                this.Password = string.Empty;
+                return;
+            }
 
-        #region Constructors
-        public LoginViewModel()
-        {
-            this.IsRemember = true;
+            await Application.Current.MainPage.DisplayAlert(
+                "OK",
+                "Fuch Yeah",
+                "Accept");
         }
         #endregion
     }
