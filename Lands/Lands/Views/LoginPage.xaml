@@ -110,7 +110,14 @@
                     VerticalOptions="EndAndExpand">
                     <Image
                         Source="facebooklogo.png"
-                        WidthRequest="100"/>
+                        WidthRequest="100">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding LoginFacebookCommand}">
+                                
+                            </TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
                     <Image 
                         Source="twitterlogo.png"
                         WidthRequest="100"/>
