@@ -132,12 +132,12 @@
     <BundleResource Include="Resources\onu.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\facebook_logo.png" />
+    <BundleResource Include="Resources\instagramlogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\twitter_logo.png" />
+    <BundleResource Include="Resources\twitterlogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\instagram_logo.png" />
+    <BundleResource Include="Resources\facebooklogo.png" />
   </ItemGroup>
 </Project>

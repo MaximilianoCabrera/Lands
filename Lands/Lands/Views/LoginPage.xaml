@@ -10,12 +10,13 @@
             BindingContext="{Binding Login}">
             <StackLayout Padding="5">
                 <Image
-                    Source="onu"
+                    Source="onu.png"
                     WidthRequest="200">
                 </Image>
 
                 <Grid
-                    Margin="10,0">
+                    Margin="10,0"
+                    VerticalOptions="CenterAndExpand">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="2*"/>
@@ -53,12 +54,13 @@
 
                 <ActivityIndicator
                     IsRunning="{Binding IsRunning, Mode=TwoWay}"
-                    VerticalOptions="Center">
+                    VerticalOptions="CenterAndExpand">
                 </ActivityIndicator>
                 
                 <StackLayout
                     Margin="10,0"
-                    Orientation="Horizontal">
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
                     <Label
                         HorizontalOptions="StartAndExpand"
                         Text="Rememberme on this device"
@@ -73,41 +75,46 @@
                 <Label
                     HorizontalOptions="Center"
                     Text="Forgot your password?"
-                    TextColor="Blue">
+                    TextColor="Blue"
+                    VerticalOptions="CenterAndExpand">
                 </Label>
 
                 <StackLayout
-                    Margin="60,0">
+                    Margin="60,0"
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
                     <Button
                         BackgroundColor="Navy"
                         BorderRadius="23"
                         Command="{Binding LoginCommand}"
                         HeightRequest="46"
+                        HorizontalOptions="FillAndExpand"
                         Text="Login"
                         TextColor="White">
                     </Button>
-
                     <Button
                         BackgroundColor="Purple"
                         BorderRadius="23"
                         Command="{Binding RegisterCommand}"
                         HeightRequest="46"
+                        HorizontalOptions="FillAndExpand"
                         Text="Register"
                         TextColor="White">
                     </Button>
                 </StackLayout>
 
                 <StackLayout
+                    HorizontalOptions="Center"
                     Orientation="Horizontal"
-                    HorizontalOptions="Center">
+                    VerticalOptions="EndAndExpand">
                     <Image
-                        Source="facebook_logo"
+                        Source="facebooklogo.png"
                         WidthRequest="100"/>
                     <Image 
-                        Source="twitter_logo"
+                        Source="twitterlogo.png"
                         WidthRequest="100"/>
                     <Image
-                        Source="instagram_logo"
+                        Source="instagramlogo.png"
                         WidthRequest="100"/>
                 </StackLayout>
             </StackLayout>
